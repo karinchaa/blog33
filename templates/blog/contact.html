@@ -1,0 +1,61 @@
+<!-- templates/blog/contact.html -->
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<!-- Blog Post -->
+
+<!-- Title -->
+<h1>Contact</h1>
+
+<!-- Author -->
+<p class="lead">
+    by <a href="#">Start Bootstrap</a>
+</p>
+
+<hr>
+<hr>
+
+<!-- Preview Image -->
+<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+
+<hr>
+
+<!-- Post Content -->
+<p class="lead">Dnipro +38 000 000 00 00</p>
+
+<hr>
+
+<h2>Subscribe to our Newsletter</h2>
+<form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Subscribe</button>
+</form>
+
+<hr>
+
+<!-- Posted Comments -->
+
+<!-- Comment -->
+<div class="media">
+    <a class="pull-left" href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">Start Bootstrap
+            <small>August 25, 2014 at 9:30 PM</small>
+        </h4>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+</div>
+
+<!-- Comment -->
+<div class="media">
+    <a class="pull-left" href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </a>
+</div>
+
+{% endblock %}

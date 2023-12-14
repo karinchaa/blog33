@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<h1 class="page-header">
+    Page Heading
+    <small>Secondary Text</small>
+</h1>
+
+
+<!-- First Blog Post -->
+<h2>
+    {% for post in posts %}
+
+    <a href="'post.html"> {{post.title}}</a>
+</h2>
+<p class="lead">
+    by <a href="index.php">{{ post.user }}</a>
+</p>
+<p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.published_date}}</p>
+<hr>
+<img class="img-responsive" src='{{ post.poster }}' alt="">
+<hr>
+<p>{{ post.content|truncatewords:40 }}</p>
+    <p>Tags:
+    {% for t in post.tag.all %}
+        <a href="#">
+            <span>{{ t.tag }}</span>
+        </a>
+    {% endfor %}
+</p>
+
+<a class="btn btn-primary" href="{% url 'post' id=post.title %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+<hr>
+
+
+{% endfor %}
+<!-- Pager -->
+<ul class="pager">
+    <li class="previous">
+        <a href="#">&larr; Older</a>
+    </li>
+    <li class="next">
+        <a href="#">Newer &rarr;</a>
+    </li>
+</ul>
+{% endblock %}
