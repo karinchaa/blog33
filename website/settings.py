@@ -136,4 +136,4 @@ LOGOUT_URL = 'blog_logout'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
-STATIC_ROOT = ""
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
